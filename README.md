@@ -1,3 +1,2 @@
 # Machine-Coding
-
-Repository for learning low level design problems
+Repository for low level design problems
