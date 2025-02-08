@@ -7,8 +7,10 @@ import com.machinecoding.vendingmachine.productfactory.ProductName;
 
 import javax.naming.InsufficientResourcesException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 public class VendingMachine {
     private static volatile VendingMachine machine;
@@ -16,7 +18,7 @@ public class VendingMachine {
     private List<Product> productList;
 
     private VendingMachine(){
-        productList = new ArrayList<>();
+        productList = Collections.synchronizedList(new ArrayList<>());
     }
 
     public static VendingMachine getInstance(){
